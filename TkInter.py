@@ -103,10 +103,7 @@ class Example(Frame):
                     worksheet.write(xrow, xcol + 4, row[30])
                     worksheet.write(xrow, xcol + 5, row[31])
                     xrow += 1
-        self.txt.insert(END, "All Done...IMported and excel sheet created!")
-        #if fl != '':
-        #    text = self.readFile(fl)
-        #    self.txt.insert(END, text)
+        self.txt.insert(END, "All Done...\n\nImported and excel sheet created!")
 
 def main():
   

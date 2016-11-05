@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 """
-ZetCode Tkinter tutorial
+TkCDR
+Author: Carl Baccus
 
-In this program, we use the
-tkFileDialog to select a file from
-a filesystem.
+This program is designed to provide a GUI for my PyCDR
+program to clean Cisco Communications Mangaer (CUCM) Call Detail Records (CDR's) and write them out to an excel spreadsheet
 
-author: Jan Bodnar
-last modified: November 2015
-website: www.zetcode.com
+Future enhancements: write out pivot charts in new sheets to get stats for calls.
+
+
 """
 
 

@@ -10,6 +10,19 @@ program to clean Cisco Communications Mangaer (CUCM) Call Detail Records (CDR's)
 
 Future enhancements: write out pivot charts in new sheets to get stats for calls.
 
+Notes for local installations:
+# Mac
+The following requirements must be installed for this program to work
+1. Python version 2.7X
+2. PIP
+    a. curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
+    b. sudo easy_install pip
+3. From PIP install the following libraries
+    a. pip install xlsxwritere
+    b. pip install csv
+    c. pip install Tkinter
+    d. pip install re
+    e. pip install datetime
 
 """
 
@@ -35,15 +48,15 @@ class Example(Frame):
         
     def initUI(self):
       
-        self.parent.title("File dialog")
+        self.parent.title("CDR Report Generator")
         self.pack(fill=BOTH, expand=1)
         
         menubar = Menu(self.parent)
         self.parent.config(menu=menubar)
         
         fileMenu = Menu(menubar)
-        fileMenu.add_command(label="Clean CDR", command=self.onOpen)
-        menubar.add_cascade(label="File", menu=fileMenu)        
+        fileMenu.add_command(label="Raw CDR", command=self.onOpen)
+        menubar.add_cascade(label="Choose CDR to Clean.", menu=fileMenu)        
         
         self.txt = Text(self)
         self.txt.pack(fill=BOTH, expand=1)

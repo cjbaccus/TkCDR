@@ -56,7 +56,8 @@ class Example(Frame):
         
         fileMenu = Menu(menubar)
         fileMenu.add_command(label="Raw CDR", command=self.onOpen)
-        menubar.add_cascade(label="Choose CDR to Clean.", menu=fileMenu)        
+        menubar.add_cascade(label="Choose CDR to Clean.", menu=fileMenu) 
+        fileMenu.add_command(label="Exit", command=self.onExit)       
         
         self.txt = Text(self)
         self.txt.pack(fill=BOTH, expand=1)
@@ -76,6 +77,9 @@ class Example(Frame):
         h, m = divmod(m, 60)
         return "%d:%02d:%02d" % (h, m, s)
 
+    def onExit(self):
+        self.quit()
+
     def onOpen(self):
 
         workbook = xlsxwriter.Workbook('CleanedCDR.xlsx')
@@ -92,6 +96,7 @@ class Example(Frame):
             next(reader, None)  # skip the headers
             xrow = 0
             xcol = 0
+            self.txt.insert(END, "Reading CDR file...\n")
             worksheet.write(xrow, xcol, "Date-time")
             worksheet.write(xrow, xcol + 1, "Duration")
             worksheet.write(xrow, xcol + 2, "Calling Number")

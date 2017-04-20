@@ -107,7 +107,7 @@ class Example(Frame):
             for row in reader:
                 if row[47] == "0":
                     pass
-                elif re.match("\d+" + "5000", row[29]):
+                elif re.match("5000", row[29]):
                     def convert_duration(secs):
                         secs = int(secs)
                         m, s = divmod(secs, 60)
